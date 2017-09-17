@@ -10,6 +10,7 @@
 		83781ECE1F6E2BC6009FB2E5 /* LightweightReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83781EC41F6E2BC6009FB2E5 /* LightweightReactive.framework */; };
 		83781ED31F6E2BC6009FB2E5 /* LightweightReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */; };
 		83781ED51F6E2BC6009FB2E5 /* LightweightReactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 83781EC71F6E2BC6009FB2E5 /* LightweightReactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		83781ECD1F6E2BC6009FB2E5 /* LightweightReactiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightweightReactiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightweightReactiveTests.swift; sourceTree = "<group>"; };
 		83781ED41F6E2BC6009FB2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightweightReactive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				83781EC71F6E2BC6009FB2E5 /* LightweightReactive.h */,
 				83781EC81F6E2BC6009FB2E5 /* Info.plist */,
+				83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */,
 			);
 			path = LightweightReactive;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 					83781EC31F6E2BC6009FB2E5 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = THAWHMKJ4Z;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					83781ECC1F6E2BC6009FB2E5 = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +329,7 @@
 		83781ED91F6E2BC6009FB2E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = THAWHMKJ4Z;
@@ -336,6 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.hidemunetakahashi.LightweightReactive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +350,7 @@
 		83781EDA1F6E2BC6009FB2E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = THAWHMKJ4Z;
@@ -362,6 +370,7 @@
 		83781EDC1F6E2BC6009FB2E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = THAWHMKJ4Z;
 				INFOPLIST_FILE = LightweightReactiveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +383,7 @@
 		83781EDD1F6E2BC6009FB2E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = THAWHMKJ4Z;
 				INFOPLIST_FILE = LightweightReactiveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +412,7 @@
 				83781EDA1F6E2BC6009FB2E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83781EDB1F6E2BC6009FB2E5 /* Build configuration list for PBXNativeTarget "LightweightReactiveTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +421,7 @@
 				83781EDD1F6E2BC6009FB2E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
