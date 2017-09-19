@@ -28,7 +28,7 @@ public class LightweightReactive: NSObject {
         registClosureOf(source: source, keyPath: keyPath, closure: closure)
     }
 
-    public func removeObseving(source: NSObject, keypath: String) {
+    public func removeObserving(source: NSObject, keypath: String) {
         source.removeObserver(self, forKeyPath: keypath)
         removeClosureOf(source: source, keyPath: keypath)
     }
