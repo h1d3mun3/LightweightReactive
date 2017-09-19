@@ -12,11 +12,11 @@ public class LightweightReactive: NSObject {
     public typealias Closure = (_ keyPath: String?, _ object: Any?, _ change: [NSKeyValueChangeKey : Any]?, _ context:
         UnsafeMutableRawPointer?) -> Void
     
+    fileprivate typealias KeyPathAndClosure = [String : Closure]
+    
     public static let lr = LightweightReactive()
     
-    private typealias KeyPathAndClosure = [String : Closure]
-    
-    private var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
+    fileprivate var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
     
     private override init() {
         
@@ -44,8 +44,11 @@ public class LightweightReactive: NSObject {
         }
         closure(keyPath, object, change, context)
     }
-    
-    private func registClosureOf(source: NSObject, keyPath: String, closure: LightweightReactive.Closure?) {
+}
+
+//MARK: Private Methods.
+extension LightweightReactive {
+    fileprivate func registClosureOf(source: NSObject, keyPath: String, closure: LightweightReactive.Closure?) {
         if closure == nil {
             return
         }
@@ -62,7 +65,7 @@ public class LightweightReactive: NSObject {
         objectAndKeyPathClosure[source] = keyPathAndClosure
     }
     
-    private func searchClosureOf(source: NSObject, keyPath: String) -> LightweightReactive.Closure? {
+    fileprivate func searchClosureOf(source: NSObject, keyPath: String) -> LightweightReactive.Closure? {
         guard let keyPathAndClosure = objectAndKeyPathClosure[source],
             let closure = keyPathAndClosure[keyPath] else {
                 return nil
@@ -70,7 +73,7 @@ public class LightweightReactive: NSObject {
         return closure
     }
     
-    private func removeClosureOf(source: NSObject, keyPath: String) {
+    fileprivate func removeClosureOf(source: NSObject, keyPath: String) {
         guard var keyPathAndClosure = objectAndKeyPathClosure[source] else {
             return
         }
