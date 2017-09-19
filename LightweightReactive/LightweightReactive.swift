@@ -12,11 +12,11 @@ public class LightweightReactive: NSObject {
     public typealias Closure = (_ keyPath: String?, _ object: Any?, _ change: [NSKeyValueChangeKey : Any]?, _ context:
         UnsafeMutableRawPointer?) -> Void
     
+    fileprivate typealias KeyPathAndClosure = [String : Closure]
+    
     public static let lr = LightweightReactive()
     
-    private typealias KeyPathAndClosure = [String : Closure]
-    
-    private var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
+    fileprivate var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
     
     private override init() {
         
@@ -28,8 +28,9 @@ public class LightweightReactive: NSObject {
         registClosureOf(source: source, keyPath: keyPath, closure: closure)
     }
 
-    public func removeObseving(source: NSObject, keypath: String) {
+    public func removeObserving(source: NSObject, keypath: String) {
         source.removeObserver(self, forKeyPath: keypath)
+        removeClosureOf(source: source, keyPath: keypath)
     }
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -43,8 +44,11 @@ public class LightweightReactive: NSObject {
         }
         closure(keyPath, object, change, context)
     }
-    
-    private func registClosureOf(source: NSObject, keyPath: String, closure: LightweightReactive.Closure?) {
+}
+
+//MARK: Private Methods.
+extension LightweightReactive {
+    fileprivate func registClosureOf(source: NSObject, keyPath: String, closure: LightweightReactive.Closure?) {
         if closure == nil {
             return
         }
@@ -61,11 +65,19 @@ public class LightweightReactive: NSObject {
         objectAndKeyPathClosure[source] = keyPathAndClosure
     }
     
-    private func searchClosureOf(source: NSObject, keyPath: String) -> LightweightReactive.Closure? {
+    fileprivate func searchClosureOf(source: NSObject, keyPath: String) -> LightweightReactive.Closure? {
         guard let keyPathAndClosure = objectAndKeyPathClosure[source],
             let closure = keyPathAndClosure[keyPath] else {
                 return nil
         }
         return closure
+    }
+    
+    fileprivate func removeClosureOf(source: NSObject, keyPath: String) {
+        guard var keyPathAndClosure = objectAndKeyPathClosure[source] else {
+            return
+        }
+        
+        keyPathAndClosure.removeValue(forKey: keyPath)
     }
 }
