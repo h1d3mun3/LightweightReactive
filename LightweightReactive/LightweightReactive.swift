@@ -30,6 +30,7 @@ public class LightweightReactive: NSObject {
 
     public func removeObseving(source: NSObject, keypath: String) {
         source.removeObserver(self, forKeyPath: keypath)
+        removeClosureOf(source: source, keyPath: keypath)
     }
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -67,5 +68,13 @@ public class LightweightReactive: NSObject {
                 return nil
         }
         return closure
+    }
+    
+    private func removeClosureOf(source: NSObject, keyPath: String) {
+        guard var keyPathAndClosure = objectAndKeyPathClosure[source] else {
+            return
+        }
+        
+        keyPathAndClosure.removeValue(forKey: keyPath)
     }
 }
