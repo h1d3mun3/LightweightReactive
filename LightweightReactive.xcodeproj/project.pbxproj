@@ -11,6 +11,7 @@
 		83781ED31F6E2BC6009FB2E5 /* LightweightReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */; };
 		83781ED51F6E2BC6009FB2E5 /* LightweightReactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 83781EC71F6E2BC6009FB2E5 /* LightweightReactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */; };
+		837DF9881F718CC700EA5656 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 837DF9871F718CC700EA5656 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightweightReactiveTests.swift; sourceTree = "<group>"; };
 		83781ED41F6E2BC6009FB2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightweightReactive.swift; sourceTree = "<group>"; };
+		837DF9871F718CC700EA5656 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = LightweightReactive/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		83781EBA1F6E2BC6009FB2E5 = {
 			isa = PBXGroup;
 			children = (
+				837DF9871F718CC700EA5656 /* README.md */,
 				83781EC61F6E2BC6009FB2E5 /* LightweightReactive */,
 				83781ED11F6E2BC6009FB2E5 /* LightweightReactiveTests */,
 				83781EC51F6E2BC6009FB2E5 /* Products */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837DF9881F718CC700EA5656 /* README.md in Sources */,
 				83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
