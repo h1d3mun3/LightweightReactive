@@ -32,7 +32,7 @@
 		83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightweightReactiveTests.swift; sourceTree = "<group>"; };
 		83781ED41F6E2BC6009FB2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightweightReactive.swift; sourceTree = "<group>"; };
-		837DF9871F718CC700EA5656 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = LightweightReactive/README.md; sourceTree = "<group>"; };
+		837DF9871F718CC700EA5656 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
