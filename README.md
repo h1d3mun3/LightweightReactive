@@ -1,6 +1,6 @@
 # LightweightReactive
 
-LightweightReactive is a Lightweight Swift's KVO mapper.
+LightweightReactive is a Lightweight Swift's KVO wrapper.
 
 If you wish to check key-value observing of something, LightweightReactive will help you.
 
