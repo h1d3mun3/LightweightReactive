@@ -11,23 +11,25 @@ import Foundation
 public class LightweightReactive: NSObject {
     public typealias Closure = (_ keyPath: String?, _ object: Any?, _ change: [NSKeyValueChangeKey : Any]?, _ context: UnsafeMutableRawPointer?) -> Void
     
+    public typealias ObserveTarget = NSObject
+    
     fileprivate typealias KeyPathAndClosure = [String : LightweightReactive.Closure]
     
     public static let observer = LightweightReactive()
     
-    fileprivate var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
+    fileprivate var objectAndKeyPathClosure: [ObserveTarget: KeyPathAndClosure] = [:]
     
     private override init() {
         
     }
     
-    public func startObserving(source: NSObject, keyPath: String, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer?, closure: LightweightReactive.Closure?) {
+    public func startObserving(source: ObserveTarget, keyPath: String, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer?, closure: LightweightReactive.Closure?) {
         source.addObserver(self, forKeyPath: keyPath, options: options, context: context)
         
         registClosureOf(source: source, keyPath: keyPath, closure: closure)
     }
 
-    public func stopObserving(source: NSObject, keypath: String) {
+    public func stopObserving(source: ObserveTarget, keypath: String) {
         source.removeObserver(self, forKeyPath: keypath)
         removeClosureOf(source: source, keyPath: keypath)
     }
@@ -47,7 +49,7 @@ public class LightweightReactive: NSObject {
 
 //MARK: Private Methods.
 extension LightweightReactive {
-    fileprivate func registClosureOf(source: NSObject, keyPath: String, closure: LightweightReactive.Closure?) {
+    fileprivate func registClosureOf(source: ObserveTarget, keyPath: String, closure: LightweightReactive.Closure?) {
         if closure == nil {
             return
         }
@@ -64,7 +66,7 @@ extension LightweightReactive {
         objectAndKeyPathClosure[source] = keyPathAndClosure
     }
     
-    fileprivate func searchClosureOf(source: NSObject, keyPath: String) -> LightweightReactive.Closure? {
+    fileprivate func searchClosureOf(source: ObserveTarget, keyPath: String) -> LightweightReactive.Closure? {
         guard let keyPathAndClosure = objectAndKeyPathClosure[source],
             let closure = keyPathAndClosure[keyPath] else {
                 return nil
@@ -72,7 +74,7 @@ extension LightweightReactive {
         return closure
     }
     
-    fileprivate func removeClosureOf(source: NSObject, keyPath: String) {
+    fileprivate func removeClosureOf(source: ObserveTarget, keyPath: String) {
         guard var keyPathAndClosure = objectAndKeyPathClosure[source] else {
             return
         }
