@@ -361,7 +361,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
@@ -383,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.hidemunetakahashi.LightweightReactive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
