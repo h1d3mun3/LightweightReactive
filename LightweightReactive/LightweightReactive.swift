@@ -21,13 +21,13 @@ public class LightweightReactive: NSObject {
         
     }
     
-    public func registObserve(source: NSObject, keyPath: String, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer?, closure: LightweightReactive.Closure?) {
+    public func startObserving(source: NSObject, keyPath: String, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer?, closure: LightweightReactive.Closure?) {
         source.addObserver(self, forKeyPath: keyPath, options: options, context: context)
         
         registClosureOf(source: source, keyPath: keyPath, closure: closure)
     }
 
-    public func removeObserving(source: NSObject, keypath: String) {
+    public func stopObserving(source: NSObject, keypath: String) {
         source.removeObserver(self, forKeyPath: keypath)
         removeClosureOf(source: source, keyPath: keypath)
     }
