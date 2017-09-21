@@ -11,7 +11,6 @@
 		83781ED31F6E2BC6009FB2E5 /* LightweightReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781ED21F6E2BC6009FB2E5 /* LightweightReactiveTests.swift */; };
 		83781ED51F6E2BC6009FB2E5 /* LightweightReactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 83781EC71F6E2BC6009FB2E5 /* LightweightReactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83781EDE1F6E2E48009FB2E5 /* LightweightReactive.swift */; };
-		837DF9881F718CC700EA5656 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 837DF9871F718CC700EA5656 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837DF9881F718CC700EA5656 /* README.md in Sources */,
 				83781EDF1F6E2E48009FB2E5 /* LightweightReactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
