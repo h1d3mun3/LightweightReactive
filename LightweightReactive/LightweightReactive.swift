@@ -14,7 +14,7 @@ public class LightweightReactive: NSObject {
     
     fileprivate typealias KeyPathAndClosure = [String : Closure]
     
-    public static let lr = LightweightReactive()
+    public static let observer = LightweightReactive()
     
     fileprivate var objectAndKeyPathClosure: [NSObject: KeyPathAndClosure] = [:]
     
