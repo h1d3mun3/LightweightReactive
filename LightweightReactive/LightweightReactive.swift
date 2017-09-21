@@ -9,10 +9,9 @@
 import Foundation
 
 public class LightweightReactive: NSObject {
-    public typealias Closure = (_ keyPath: String?, _ object: Any?, _ change: [NSKeyValueChangeKey : Any]?, _ context:
-        UnsafeMutableRawPointer?) -> Void
+    public typealias Closure = (_ keyPath: String?, _ object: Any?, _ change: [NSKeyValueChangeKey : Any]?, _ context: UnsafeMutableRawPointer?) -> Void
     
-    fileprivate typealias KeyPathAndClosure = [String : Closure]
+    fileprivate typealias KeyPathAndClosure = [String : LightweightReactive.Closure]
     
     public static let observer = LightweightReactive()
     
