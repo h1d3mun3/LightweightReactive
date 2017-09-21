@@ -1,0 +1,11 @@
+framework module LightweightReactive {
+  umbrella header "LightweightReactive.h"
+
+  export *
+  module * { export * }
+}
+
+module LightweightReactive.Swift {
+    header "LightweightReactive-Swift.h"
+    requires objc
+}
