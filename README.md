@@ -7,13 +7,14 @@ If you wish to check key-value observing of something, LightweightReactive will 
 
 # Install
 For Installing with Carthage, add it to your Cartfile.
-> github "hidemune-takahashi/LightweightReactive"
+> github "LightweightReactive/LightweightReactive"
 
 # How To Use.
-writing... so long.... so......l....o....n...G
+Refer and lookup this project
+[LightweightReactiveExample](https://github.com/hidemune-takahashi/LightweightReactiveExample)
+
 
 # License
 
 LightweightReactive is distributed under a MIT License.
-
 
