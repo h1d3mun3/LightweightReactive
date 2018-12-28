@@ -7,7 +7,7 @@ If you wish to check key-value observing of something, LightweightReactive will 
 
 # Install
 For Installing with Carthage, add it to your Cartfile.
-> github "LightweightReactive/LightweightReactive"
+> github "h1d3mun3-74k4h45h1/LightweightReactive"
 
 # How To Use.
 Refer and lookup this project
